@@ -60,3 +60,11 @@ footer {
 sup {
   font-size: 100%;
 }
+.toggle-box{
+  padding-bottom: 10px;
+}
+.toggle-box:before, .toggle-box:after{
+clear: both;
+display: table;
+content: " ";
+}
