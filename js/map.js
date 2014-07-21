@@ -4,7 +4,9 @@ var mapOptions = {
 	//center: new google.maps.LatLng(-33.9, 151.2)
 	center: new google.maps.LatLng(40.71, -74.00)
 }
+
 var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+
 google.maps.event.addListener(map, 'dragend', function() {
 		if ($('#useCenter').is(':checked')) {
 			var center = map.getCenter();
@@ -14,10 +16,12 @@ google.maps.event.addListener(map, 'dragend', function() {
 		}
 	}
 );
+
 // google.maps.event.addListener(map, 'zoom_changed', function() {
 // 		getEvents();
 // 	}
 // );
+
 var events = [];
 var markers = [];
 
@@ -82,8 +86,11 @@ function loadMarkers(locations) {
 	};
 
 	/*
+	*
 	* locations structure
 	* [name,lat,lng,zindex,description,venue,venue_url,place,event_url,timing]
+	* [  0 , 1 , 2 ,   3  ,     4     ,  5  ,     6   ,  7  ,    8    ,   9  ]
+	*
 	*/
 
 	var infoWindow = new google.maps.InfoWindow({content: '',maxWidth: '400'});
@@ -100,6 +107,7 @@ function loadMarkers(locations) {
 			title: location[0],
 			zIndex: location[3]
 		});
+
 		marker.text = '<div><h1><a target="_blank" href="'+location[8]+'">'+location[0]+'</a></h1><div>'+location[4]+'</div>';
 		if(location[5] !== undefined){
 			marker.text += '<div>Venue: <a target="_blank" href="'+location[6]+'">'+location[5]+'</a></div>';
@@ -121,32 +129,31 @@ function loadMarkers(locations) {
 
 // Sets the map on all markers in the array.
 function setAllMap(map) {
-  for (var i = 0; i < markers.length; i++) {
-    markers[i].setMap(map);
-  }
+	for (var i = 0; i < markers.length; i++) {
+		markers[i].setMap(map);
+	}
 }
 
 // Removes the markers from the map, but keeps them in the array.
 function clearMarkers() {
-  setAllMap(null);
+	setAllMap(null);
 }
 
 // Shows any markers currently in the array.
 function showMarkers() {
-  setAllMap(map);
+	setAllMap(map);
 }
 
 // Deletes all markers in the array by removing references to them.
 function deleteMarkers() {
-  clearMarkers();
-  markers = [];
+	clearMarkers();
+	markers = [];
 }
 
 // Deletes all markers in the array by removing references to them then gets new ones.
 function refreshMarkers() {
-  clearMarkers();
-  markers = [];
-  getEvents();
+	deleteMarkers();
+	getEvents();
 }
 
 getEvents();
@@ -157,6 +164,4 @@ $(document).ready(function(){
 		getEvents();
 	});
 });
-
-
 

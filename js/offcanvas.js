@@ -11,29 +11,37 @@
  */
 jQuery.fn.makeSquare = function(settings) {
 
-    var options = jQuery.extend({
-        based_on: 'width'
-    }, settings);
+	var options = jQuery.extend({
+		based_on: 'width'
+	}, settings);
 
-    $(this).each(function() {
-    	if (options.based_on == 'height') {
-	        var height = $(this).height();
-	        $(this).width(height);
-	    } else {
-	        var width = $(this).width();
-	        $(this).height(width);
-	    }
-    })
+	$(this).each(function() {
+		if (options.based_on == 'height') {
+			var height = $(this).height();
+			$(this).width(height);
+		} else {
+			var width = $(this).width();
+			$(this).height(width);
+		}
+	})
 
 };
 
 $(document).ready(function () {
-  $('[data-toggle="offcanvas"]').click(function () {
-    $('.row-offcanvas').toggleClass('active')
-  });
-  $('sup').tooltip();
-  $(window).resize(function(){
-  	$('#map-canvas').makeSquare();
-  })
-  $('#map-canvas').makeSquare();
+
+	//Active the Bootstrap Offcanvas Menu Toggle
+	$('[data-toggle="offcanvas"]').click(function () {
+		$('.row-offcanvas').toggleClass('active')
+	});
+
+	//Active Bootstrap Tool Tips
+	$('sup').tooltip();
+
+	//Resize Map on Window resize
+	$(window).resize(function(){
+		$('#map-canvas').makeSquare();
+	})
+
+	//Resize Map on Page Load
+	$('#map-canvas').makeSquare();
 });
