@@ -64,7 +64,13 @@ sup {
   padding-bottom: 10px;
 }
 .toggle-box:before, .toggle-box:after{
-clear: both;
-display: table;
-content: " ";
+  clear: both;
+  display: table;
+  content: " ";
+}
+.num-results{
+  float: left;
+  color: #fff;
+  display: inline-block;
+  padding: 15px;
 }

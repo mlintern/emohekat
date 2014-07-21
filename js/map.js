@@ -33,6 +33,8 @@ function getEvents(center) {
 	var sw = '';
 	var filter = $("#filter").val();
 
+	$('.num-results').html('(  )');
+
 	if ((0+$('#radius').val()) > 0 ){
 		radius = $('#radius').val();
 	}
@@ -55,7 +57,7 @@ function getEvents(center) {
 		dataType: 'jsonp',
 		success: function (data){
 			results = data['results'];
-			console.log(results);
+			$('.num-results').html('( '+results.length+' )');
 			$.each( results, function (k,v) {
 				current = v;
 				events.push([v['event_name'],v['geocode_latitude'],v['geocode_longitude'],k,v['web_description'],v['venue_name'],v['venue_detail_url'],v['price'],v['event_detail_url'],v['date_time_description']]);
@@ -68,15 +70,15 @@ function getEvents(center) {
 function loadMarkers(locations) {
 	// Add markers to the map
 	var image = {
-	url: 'img/beachflag.png',
-	size: new google.maps.Size(31, 31),
-	origin: new google.maps.Point(0,0),
-	anchor: new google.maps.Point(0, 31)
+		url: 'img/beachflag.png',
+		size: new google.maps.Size(31, 31),
+		origin: new google.maps.Point(0,0),
+		anchor: new google.maps.Point(0, 31)
 	};
 	// Shapes define the clickable region of the icon.
 	var shape = {
-	coords: [1, 1, 1, 19, 20, 19, 20 , 1],
-	type: 'poly'
+		coords: [1, 1, 1, 19, 20, 19, 20 , 1],
+		type: 'poly'
 	};
 
 	/*
@@ -85,7 +87,7 @@ function loadMarkers(locations) {
 	*/
 
 	var infoWindow = new google.maps.InfoWindow({content: '',maxWidth: '400'});
-	console.log('locations: '+locations.length);
+	console.log('Number of Locations: '+locations.length);
 	for (var i = 0; i < locations.length; i++) {
 		var location = locations[i];
 		var myLatLng = new google.maps.LatLng(location[1], location[2]);

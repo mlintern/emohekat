@@ -35,16 +35,9 @@
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button> -->
           <a class="navbar-brand" href="#">NY Night Life</a>
+          <span class="num-results"></span>
         </div>
-        <div class="collapse navbar-collapse">
-        </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
     </div><!-- /.navbar -->
 
@@ -101,7 +94,7 @@
               </div>
             </div>
             <div class="list-group-item">
-              <button onclick="clearMarkers();" class="btn btn-info btn-sm">Clear</button>
+              <button onclick="clearMarkers();" class="btn btn-info btn-sm">Hide</button>
               <button onclick="showMarkers();" class="btn btn-success btn-sm">Show</button>
               <button onclick="deleteMarkers();" class="btn btn-danger btn-sm">Delete</button>
               <button onclick="refreshMarkers()" class="btn btn-warning btn-sm"><i class="fa fa-refresh"></i></button>
