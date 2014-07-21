@@ -33,7 +33,7 @@ function getEvents(center) {
 	var sw = '';
 	var filter = $("#filter").val();
 
-	$('.num-results').html('(  )');
+	$('.num-results').html('( <i class="fa fa-refresh fa-spin"></i> )');
 
 	if ((0+$('#radius').val()) > 0 ){
 		radius = $('#radius').val();
