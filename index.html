@@ -20,10 +20,6 @@
     <!-- Custom styles for this template -->
     <link href="css/offcanvas.css" rel="stylesheet">
 
-    <style type="text/css">
-      #map-canvas { height: 700px }
-    </style>
-
     <!-- Map Initialization -->
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHCSl3PGwkDpP6TbIgZwRm5lkAEnEX-aw">
@@ -35,7 +31,7 @@
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">NY Night Life</a>
+          <a class="navbar-brand">NY Night Life</a>
           <span class="num-results"></span>
         </div>
       </div><!-- /.container -->
@@ -44,13 +40,11 @@
     <div class="container">
 
       <div class="row row-offcanvas row-offcanvas-right">
-        <div class="visible-xs toggle-box">
-            <button type="button" class="btn btn-primary btn-xs pull-right" data-toggle="offcanvas">Toggle nav</button>
+        <div class="visible-xs toggle-box col-xs-12">
+            <button type="button" class="btn btn-primary btn-xs pull-right" data-toggle="offcanvas">Toggle Options</button>
         </div>
         <div class="col-xs-12 col-sm-9">
-          <div class="row">
             <div id="map-canvas"></div>
-          </div><!--/row-->
         </div><!--/col-xs-12 col-sm-9-->
 
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
