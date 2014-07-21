@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="NY Night Life">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>NY NIGHT LIFE</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/offcanvas.css" rel="stylesheet">
+
+    <style type="text/css">
+      #map-canvas { height: 700px }
+    </style>
+
+    <!-- Map Initialization -->
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHCSl3PGwkDpP6TbIgZwRm5lkAEnEX-aw">
+    </script>
+
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">NY Night Life</a>
+        </div>
+        <div class="collapse navbar-collapse">
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </div><!-- /.navbar -->
+
+    <div class="container">
+
+      <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-xs-12 col-sm-9">
+          <p class="pull-right visible-xs">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+          </p>
+          <div class="row">
+            <div id="map-canvas"></div>
+          </div><!--/row-->
+        </div><!--/col-xs-12 col-sm-9-->
+
+        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+          <div class="list-group">
+            <div class="list-group-item">
+              <input type="text" class="form-control" id="query" placeholder="Search" value="">
+            </div>
+            <div class="list-group-item">
+              <div class="">
+                <select id="filter" class="form-control">
+                  <option value="">Category</option>
+                  <option value="category:forChildren">Children</option>
+                  <option value="category:Dance">Dance</option>
+                  <option value="category:Jazz">Jazz</option>
+                </select>
+              </div>
+            </div>
+            <div class="list-group-item">
+              <div class="row">
+                <label class="col-sm-6 control-label">Max Events</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="numresults" value="1000" maxlength="3">
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item">
+              <div class="row">
+                <label class="col-sm-6 control-label">Distance (m)</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="radius" value="10000" maxlength="5">
+                </div>
+              </div>
+            </div>
+            <div class="list-group-item">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" id="useCenter"> Update Map Center
+                </label>
+              </div>
+            </div>
+            <div class="list-group-item">
+              <button onclick="clearMarkers();" class="btn btn-info btn-sm">Clear</button>
+              <button onclick="showMarkers();" class="btn btn-success btn-sm">Show</button>
+              <button onclick="deleteMarkers();" class="btn btn-danger btn-sm">Delete</button>
+              <button onclick="refreshMarkers()" class="btn btn-warning btn-sm"><i class="fa fa-refresh"></i></button>
+            </div>
+          </div><!--/list-group-->
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2014</p>
+      </footer>
+
+    </div><!--/.container-->
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/offcanvas.js"></script>
+    <script src="js/map.js"></script>
+  </body>
+</html>
