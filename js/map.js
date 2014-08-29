@@ -1,5 +1,5 @@
 var mapOptions = {
-	zoom: 15,
+	zoom: 14,
 	scrollwheel: false,
 	//center: new google.maps.LatLng(-33.9, 151.2)
 	center: new google.maps.LatLng(40.71, -74.00)
