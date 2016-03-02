@@ -10,7 +10,7 @@ var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 google.maps.event.addListener(map, 'dragend', function() {
 		if ($('#useCenter').is(':checked')) {
 			var center = map.getCenter();
-			var new_center = center['k']+','+center['B'];
+			var new_center = center.lat()+','+center.lng();
 			deleteMarkers();
 			getEvents(new_center);
 		}
