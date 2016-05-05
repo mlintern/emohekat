@@ -8,14 +8,13 @@ var mapOptions = {
 var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 
 google.maps.event.addListener(map, 'dragend', function() {
-		if ($('#useCenter').is(':checked')) {
-			var center = map.getCenter();
-			var new_center = center.lat()+','+center.lng();
-			deleteMarkers();
-			getEvents(new_center);
-		}
+	if ($('#useCenter').is(':checked')) {
+		var center = map.getCenter();
+		var new_center = center.lat()+','+center.lng();
+		deleteMarkers();
+		getEvents(new_center);
 	}
-);
+});
 
 // google.maps.event.addListener(map, 'zoom_changed', function() {
 // 		getEvents();
@@ -28,7 +27,7 @@ var markers = [];
 function getEvents(center) {
 
 	var url = 'http://api.nytimes.com/svc/events/v2/listings.jsonp';
-	var key = 'ca4c9f9366bec636a98ef71d8b8e6df7:19:69565207';
+	var key = '4e008db228804545a7e8321a05769efc';
 	var radius = '10000';
 	var latlng = (typeof center === "undefined") ? '40.7127,-74.0059' : center;
 	var limit = '1000';
